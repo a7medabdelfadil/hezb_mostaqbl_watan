@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useLanguageStore } from "~/APIs/store";
+import Input from "../Input";
 
 const translations = {
   ar: {
@@ -56,32 +57,19 @@ export default function ContactFormSection() {
         <div className="mt-10 flex justify-evenly rounded-2xl">
           <form className="grid grid-cols-2 gap-x-6 gap-y-4 bg-[#C4C4C40D] p-6">
             <div className="flex flex-col">
-              <label className="text-sm text-gray-600">{t.firstName}</label>
-              <input
-                type="text"
-                className="border-b border-gray-400 bg-transparent p-1 outline-none"
-              />
+              <Input label={t.firstName} name="firstName" />
+
             </div>
             <div className="flex flex-col">
-              <label className="text-sm text-gray-600">{t.lastName}</label>
-              <input
-                type="text"
-                className="border-b border-gray-400 bg-transparent p-1 outline-none"
-              />
+              <Input label={t.lastName} name="lastName" />
+              </div>
+            <div className="flex flex-col">
+              <Input label={t.phone} name="phone" />
+
             </div>
             <div className="flex flex-col">
-              <label className="text-sm text-gray-600">{t.phone}</label>
-              <input
-                type="text"
-                className="border-b border-gray-400 bg-transparent p-1 outline-none"
-              />
-            </div>
-            <div className="flex flex-col">
-              <label className="text-sm text-gray-600">{t.email}</label>
-              <input
-                type="email"
-                className="border-b border-gray-400 bg-transparent p-1 outline-none"
-              />
+              <Input label={t.email} name="email" type="email" />
+
             </div>
 
             <div className="col-span-2">

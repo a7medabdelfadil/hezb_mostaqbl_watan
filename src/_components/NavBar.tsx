@@ -91,7 +91,7 @@ export default function Navbar() {
         </div>
         {/* Nav Links */}
         <nav
-          dir={language === "ar" ? "rtl" : "ltr"}
+          dir={language === "ar" ? "ltr" : "rtl"}
           className={`${
             open ? "flex" : "hidden"
           } mt-4 w-full ${language === "ar" ? "md:flex-row" : "md:flex-row-reverse"} item flex-col items-stretch gap-2 whitespace-nowrap font-medium md:mt-0 md:flex md:w-auto md:flex-1 md:flex-row md:justify-center ${
@@ -100,6 +100,7 @@ export default function Navbar() {
         >
           <Link
             href="/"
+            onClick={() => setOpen(false)}
             className={`flex items-center gap-1 rounded-full px-2 py-1 text-sm xl:px-4 xl:py-2 ${
               pathname === "/" ? "bg-secondary text-white" : "hover:bg-white/10"
             }`}
@@ -110,6 +111,7 @@ export default function Navbar() {
             <Link
               key={item.href}
               href={item.href}
+              onClick={() => setOpen(false)}
               className={`rounded-full px-2 py-1 xl:px-4 xl:py-2 ${
                 pathname === item.href
                   ? "bg-secondary text-white"

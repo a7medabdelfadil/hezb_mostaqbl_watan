@@ -14,7 +14,7 @@ type LanguageState = {
 
 // Zustand store
 export const useLanguageStore = create<LanguageState>((set) => ({
-  language: "en", // Default to "en" during SSR
+  language: "ar", // Default to "ar" during SSR
   isLoading: true, // Initially loading
   setLanguage: (lang) => {
     set(() => ({ language: lang }));
@@ -35,7 +35,7 @@ export const useInitializeLanguage = () => {
       const savedLanguage = localStorage.getItem("language");
       if (
         savedLanguage === "en" ||
-        savedLanguage === "ru"
+        savedLanguage === "ar"
       ) {
         setLanguage(savedLanguage as Language);
       }

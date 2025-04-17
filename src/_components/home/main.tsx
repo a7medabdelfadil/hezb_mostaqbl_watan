@@ -138,14 +138,14 @@ function Main() {
       {/* Services */}
       <section
         dir={language === "ar" ? "rtl" : "ltr"}
-        className="relative bg-gradient-to-b from-[#100240] to-[#100240] px-4 pb-28 pt-12 text-white md:px-24 md:pb-10"
+        className="relative bg-gradient-to-b from-[#100240] to-[#100240] px-4 pb-80 pt-12 text-white md:px-24 md:pb-16"
       >
         <div
           dir={language === "ar" ? "rtl" : "ltr"}
           className={`flex items-center gap-8`}
         >
           {/* Image */}
-          <div>
+          <div className="hidden md:block">
             <img
               src="/images/mainHome.png"
               alt="خدمات الحزب"
@@ -155,14 +155,14 @@ function Main() {
 
           {/* Text */}
           <div>
-            <h2 className="mb-4 text-2xl font-bold md:text-3xl">
+            <h2 className="mb-4 text-md font-bold md:text-3xl">
               {t.servicesTitle}
             </h2>
-            <p className="mb-6 max-w-xl text-sm leading-loose text-white/90">
+            <p className="mb-6 max-w-xl text-xs md:text-sm leading-loose text-white/90">
               {t.servicesDesc}
             </p>
             <div className="bg-bg1 absolute -bottom-10 left-0 w-full py-4 lg:left-10 lg:w-[95%] lg:rounded-xl">
-              <div className="flex flex-wrap justify-between md:flex-nowrap">
+              <div className="flex max-md:flex-col justify-between md:flex-nowrap">
                 {t.serviceTabs.map((item, i) => (
                   <React.Fragment key={i}>
                     <div className="flex items-center gap-4 rounded-lg px-2 py-2 text-sm text-white shadow-md transition hover:bg-black md:gap-1 lg:gap-2 lg:px-4">

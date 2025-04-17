@@ -88,10 +88,10 @@ export default function CentralCommittees() {
       <div className="mx-auto w-[90%]">
         {/* Title */}
         <div
-          className="relative mx-auto mb-12 h-[200px] w-[400px] bg-contain bg-center bg-no-repeat"
+          className="relative mx-auto mb-12 h-[200px] w-[300px] md:w-[400px] bg-contain bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/images/structureborder2.png')" }}
         >
-          <p className="absolute inset-0 flex items-center justify-center text-2xl font-bold text-primary3">
+          <p className="absolute inset-0 flex items-center justify-center text-xl md:text-2xl font-bold text-primary3">
             {t.title}
           </p>
         </div>

@@ -35,10 +35,10 @@ export default function StructureSection() {
 
   const titleImage = (text: string) => (
     <div
-      className="relative mx-auto mb-8 h-[200px] w-[500px] bg-contain bg-center bg-no-repeat"
+      className="relative mx-auto mb-8 h-[200px] w-[300px] md:w-[500px] bg-contain bg-center bg-no-repeat"
       style={{ backgroundImage: "url('/images/structureborder2.png')" }}
     >
-      <p className="absolute inset-0 flex items-center justify-center text-2xl md:text-3xl font-bold text-primary3">
+      <p className="absolute inset-0 flex items-center justify-center text-xl md:text-3xl font-bold text-primary3">
         {text}
       </p>
     </div>

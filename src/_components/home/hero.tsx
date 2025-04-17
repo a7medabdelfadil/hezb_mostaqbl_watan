@@ -71,7 +71,7 @@ export default function Hero() {
 
       {/* Text */}
       <div
-        className={`flex h-full flex-col justify-center space-y-4 px-6 md:px-24`}
+        className={`flex h-full max-md:pt-40 flex-col md:justify-center space-y-4 px-6 md:px-24`}
       >
         <h1 className="whitespace-pre-line text-4xl leading-tight md:text-7xl">
           {t.title}

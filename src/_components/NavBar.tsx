@@ -39,12 +39,10 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const navItems = [
-    { label: t.contact, href: "/contact" },
-    // { label: t.news, href: "/news" },
-    // { label: t.center, href: "/center" },
-    { label: t.members, href: "/members" },
-    { label: t.structure, href: "/structure" },
     { label: t.about, href: "/about" },
+    { label: t.structure, href: "/structure" },
+    { label: t.members, href: "/members" },
+    { label: t.contact, href: "/contact" },
   ];
 
   return (
@@ -96,10 +94,18 @@ export default function Navbar() {
           dir={language === "ar" ? "rtl" : "ltr"}
           className={`${
             open ? "flex" : "hidden"
-          } mt-4 w-full ${language === "ar" ? "md:flex-row" : "md:flex-row-reverse"} md:flex-1 md:justify-center item flex-col items-stretch gap-2 whitespace-nowrap font-medium md:mt-0 md:flex md:w-auto md:flex-row ${
+          } mt-4 w-full ${language === "ar" ? "md:flex-row" : "md:flex-row-reverse"} item flex-col items-stretch gap-2 whitespace-nowrap font-medium md:mt-0 md:flex md:w-auto md:flex-1 md:flex-row md:justify-center ${
             language === "ar" ? "lg:flex-row-reverse" : ""
           }`}
         >
+          <Link
+            href="/"
+            className={`flex items-center gap-1 rounded-full px-2 py-1 text-sm xl:px-4 xl:py-2 ${
+              pathname === "/" ? "bg-secondary text-white" : "hover:bg-white/10"
+            }`}
+          >
+            {t.home}
+          </Link>
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -113,14 +119,6 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
-          <Link
-            href="/"
-            className={`flex items-center gap-1 rounded-full px-2 py-1 text-sm xl:px-4 xl:py-2 ${
-              pathname === "/" ? "bg-secondary text-white" : "hover:bg-white/10"
-            }`}
-          >
-            {t.home}
-          </Link>
         </nav>
         {/* Logo in Desktop */}
         <div className="hidden items-center gap-4 md:flex">

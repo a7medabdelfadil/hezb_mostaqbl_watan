@@ -4,17 +4,27 @@
 
 
 .light {
-  --primary: 36, 53, 122; /* #24357A */
-  --secondary: 91, 146, 229; /* #5B92E5 */
-  --bg-primary: 255, 255, 255; /* #FFFFFF */
-  --text-primary: 0, 0, 0; /* #000000 */
+  --primary: 7, 16, 81;
+  --primary2: 3, 4, 35;
+  --primary3: 26, 35, 126;
+  --secondary: 32, 124, 235;
+  --purple: 98, 54, 245;
+  --bgPrimary: 255, 255, 255;
+  --textPrimary: 0, 0, 0;
+  --bg1: 29, 29, 29;
+  --textGray: 108, 109, 110;
 }
 
 .dark {
-  --primary: 36, 53, 122; /* #24357A */
-  --secondary: 91, 146, 229; /* #5B92E5 */
-  --bg-primary: 255, 255, 255; /* #FFFFFF */
-  --text-primary: 0, 0, 0; /* #000000 */
+  --primary: 7, 16, 81;
+  --primary2: 3, 4, 35;
+  --primary3: 26, 35, 126;
+  --secondary: 32, 124, 235;
+  --purple: 98, 54, 245;
+  --bgPrimary: 255, 255, 255;
+  --textPrimary: 0, 0, 0;
+  --bg1: 29, 29, 29;
+  --textGray: 108, 109, 110;
 }
 
 @layer utilities {

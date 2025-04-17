@@ -1,6 +1,7 @@
 "use client";
 
 import { Building, Landmark } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useLanguageStore } from "~/APIs/store";
 
 const translations = {
@@ -10,11 +11,13 @@ const translations = {
       {
         heading: "أمانات المحافظات",
         text: "27 أمانة على مستوى محافظات الجمهورية",
+        href: "/governorate",
         icon: <Building size={20} />,
       },
       {
         heading: "أمانات المراكز",
         text: "تغطي كافة المراكز الإدارية في المحافظات",
+        href: "/district",
         icon: <Landmark size={20} />,
       },
     ],
@@ -25,11 +28,13 @@ const translations = {
       {
         heading: "Governorate Secretariats",
         text: "27 secretariats across Egypt’s governorates.",
+        href: "/governorate",
         icon: <Building size={20} />,
       },
       {
         heading: "District Secretariats",
         text: "Covering all administrative districts in governorates.",
+        href: "/district",
         icon: <Landmark size={20} />,
       },
     ],
@@ -37,6 +42,7 @@ const translations = {
 };
 
 export default function RegionalStructure() {
+  const router = useRouter();
   const lang = useLanguageStore((s) => s.language);
   const t = translations[lang || "ar"];
 
@@ -45,10 +51,10 @@ export default function RegionalStructure() {
       <div className="md:w-[80%] xl:w-[50%] mx-auto">
         {/* Title */}
         <div
-          className="relative mx-auto mb-12 h-[180px] w-[350px] bg-contain bg-center bg-no-repeat"
+          className="relative mx-auto mb-12 h-[180px] w-[300px] md:w-[400px] bg-contain bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/images/structureborder2.png')" }}
         >
-          <p className="absolute inset-0 flex items-center justify-center text-2xl font-bold text-primary3">
+          <p className="absolute inset-0 flex items-center justify-center text-xl md:text-2xl font-bold text-primary3">
             {t.title}
           </p>
         </div>
@@ -58,7 +64,8 @@ export default function RegionalStructure() {
           {t.items.map((item, i) => (
             <div
               key={i}
-              className="rounded-xl bg-gradient-to-b from-primary to-primary2 p-6 text-white shadow-md"
+              onClick={() => {router.push(item.href)}}
+              className="rounded-xl cursor-pointer bg-gradient-to-b from-primary to-primary2 hover:bg-gradient-to-b hover:from-primary hover:to-primary3  p-6 text-white shadow-md"
             >
               <div className="mb-2 flex items-center gap-2 text-white">
                 {item.icon}

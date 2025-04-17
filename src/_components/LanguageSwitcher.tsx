@@ -26,12 +26,12 @@ const LanguageSwitcher = () => {
   if (isLoading) return null;
 
   const ringColor =
-    language === "ar" ? "ring-blue-400 shadow-blue-500/50" : "ring-yellow-300 shadow-yellow-400/60";
+    language === "ar" ? "md:ring-blue-400 md:shadow-blue-500/50" : "md:ring-yellow-300 md:shadow-yellow-400/60";
 
   return (
     <button
       onClick={toggleLanguage}
-      className={`relative h-8 w-8 rounded-full ring-2 ${ringColor} shadow-lg transition-all duration-300 ease-in-out hover:scale-110`}
+      className={`relative w-6 h-6 md:h-8 md:w-8 rounded-full ring-2 ${ringColor} shadow-lg transition-all duration-300 ease-in-out hover:scale-110`}
       aria-label="Toggle Language"
     >
       <img

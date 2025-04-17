@@ -29,11 +29,11 @@ export default function StructureHero() {
       />
 
       {/* Text */}
-      <div className="relative z-10 flex h-full w-full flex-col items-center justify-center bg-gradient-to-t from-black/50 to-transparent   px-6 text-center text-white">
+      <div className="relative z-10 flex h-full w-full flex-col items-center justify-center bg-gradient-to-t from-black/80 to-transparent px-6 text-center text-white">
         <h1 className="mb-4 text-2xl font-bold md:text-4xl lg:text-5xl">
           {t.title}
         </h1>
-        <p className="max-w-2xl text-2xl bg-[#207CEB33] px-4 py-2 text-white/90">
+        <p className="max-w-2xl bg-[#207CEB33] px-4 py-2 text-2xl text-white/90">
           {t.desc}
         </p>
       </div>

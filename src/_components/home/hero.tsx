@@ -57,32 +57,40 @@ export default function Hero() {
   return (
     <section
       dir={language === "ar" ? "rtl" : "ltr"}
-      className="relative h-[100vh] w-full text-white"
+      className="relative h-[90vh] w-full text-white"
     >
       {/* Background */}
-      <div className="absolute inset-0 -z-10">
+      {/* <div className="absolute inset-0 -z-10">
         <img
           src="/images/hero.png"
           alt="صورة الخلفية"
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-black/40" />
+      </div> */}
+      <div className="absolute inset-0 -z-10">
+        <video
+          src="/videos/egyptanimation.mp4"
+          className="h-full w-full object-cover"
+          autoPlay muted loop
+        />
+        <div className="absolute inset-0  bg-gradient-to-t from-black/50 to-transparent" />
       </div>
 
       {/* Text */}
       <div
-        className={`flex h-full max-md:pt-40 flex-col md:justify-center space-y-4 px-6 md:px-24`}
+        className={`flex h-full max-md:pt-40 flex-col md:items-center md:justify-center space-y-4 px-6 md:px-24`}
       >
-        <h1 className="whitespace-pre-line text-4xl leading-tight md:text-7xl">
+        <h1 className="whitespace-pre-line text-2xl leading-tight md:text-7xl">
           {t.title}
         </h1>
-        <p className="max-w-xl bg-[#207CEB33] px-4 py-2 text-sm md:text-base">
+        <p className="max-w-xl bg-[#207CEB22] px-4 py-2 text-sm md:text-lg">
           {t.desc}
         </p>
       </div>
 
       {/* Features */}
-      <div className="absolute bottom-0 right-0 w-full bg-gradient-to-t from-black/50 to-transparent px-4 py-8 md:px-24">
+      <div className="absolute bottom-0 right-0 w-full px-4 py-8 md:px-24">
         <div className="grid grid-cols-1 gap-4 text-sm text-white md:grid-cols-3">
           {t.features.map((item, i) => (
             <div

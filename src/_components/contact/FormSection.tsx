@@ -48,16 +48,16 @@ export default function ContactFormSection() {
   const t = translations[lang || "ar"];
 
   return (
-    <section className="w-full bg-white px-4 py-12 md:px-24">
+    <section dir={lang === "ar" ? "rtl" : "ltr"} className="w-full bg-white px-4 py-12 md:px-24">
       <div className="mx-auto w-full max-w-6xl">
         <h2 className="mx-auto mb-4 w-fit border-b-2 border-yellow-400 pb-1 text-center text-4xl font-bold text-primary3">
           {t.title}
         </h2>
 
         <div className="mt-10 flex justify-evenly rounded-2xl">
-          <form className="grid grid-cols-2 gap-x-6 gap-y-4 bg-[#C4C4C40D] p-6">
-            <div className="flex flex-col">
-              <Input label={t.firstName} name="firstName" />
+          <form dir={lang === "ar" ? "rtl" : "ltr"} className="grid grid-cols-2 gap-x-6 gap-y-4 bg-[#C4C4C40D] p-6">
+            <div dir={lang === "ar" ? "rtl" : "ltr"} className="flex flex-col">
+              <Input  label={t.firstName} name="firstName" />
 
             </div>
             <div className="flex flex-col">
@@ -87,7 +87,6 @@ export default function ContactFormSection() {
             </div>
 
             <div className="col-span-2 flex flex-col">
-              <label className="text-sm text-gray-600">{t.messageLabel}</label>
               <textarea
                 rows={3}
                 placeholder={t.messagePlaceholder}

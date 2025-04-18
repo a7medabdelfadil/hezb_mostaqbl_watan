@@ -9,9 +9,10 @@ interface InputProps {
 
 const Input: React.FC<InputProps> = ({ label, name, type = "text" }) => {
   const [hasValue, setHasValue] = useState(false);
+  const isArabic = /[\u0600-\u06FF]/.test(label); // Check if Arabic
 
   return (
-    <StyledWrapper>
+    <StyledWrapper $isArabic={isArabic}>
       <div className="form-control">
         <input
           type={type}
@@ -20,26 +21,32 @@ const Input: React.FC<InputProps> = ({ label, name, type = "text" }) => {
           className={hasValue ? "filled" : ""}
         />
         <label>
-          {label.split("").map((char, i) => (
-            <span key={i} style={{ transitionDelay: `${i * 50}ms` }}>
-              {char}
-            </span>
-          ))}
+          {isArabic ? (
+            <span>{label}</span>
+          ) : (
+            label.split("").map((char, i) => (
+              <span key={i} style={{ transitionDelay: `${i * 50}ms` }}>
+                {char}
+              </span>
+            ))
+          )}
         </label>
       </div>
     </StyledWrapper>
   );
 };
-
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.div<{ $isArabic: boolean }>`
   .form-control {
     position: relative;
     margin: 20px 0 40px;
     width: 100%;
+    unicode-bidi: isolate;
+    text-align: right; 
   }
 
-  .form-control input {
+  .form-control input,
+  .form-control textarea {
     background-color: transparent;
     border: 0;
     border-bottom: 2px #515151 solid;
@@ -48,6 +55,7 @@ const StyledWrapper = styled.div`
     padding: 15px 0;
     font-size: 18px;
     color: #000;
+    text-align: right; 
   }
 
   .form-control input:focus {
@@ -58,7 +66,8 @@ const StyledWrapper = styled.div`
   .form-control label {
     position: absolute;
     top: 15px;
-    left: 0;
+     ${(props) => (props.$isArabic ? "right" : "left")}: 0;
+
     pointer-events: none;
   }
 

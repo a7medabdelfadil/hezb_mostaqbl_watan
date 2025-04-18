@@ -3,7 +3,6 @@
 
 import React from "react";
 import { FaAward, FaRegFileAlt, FaRegStar, FaSyncAlt } from "react-icons/fa";
-import { FaRedo } from "react-icons/fa";
 import { LuUsers } from "react-icons/lu";
 import { useLanguageStore } from "~/APIs/store";
 
